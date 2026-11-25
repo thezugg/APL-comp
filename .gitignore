@@ -1,0 +1,37 @@
+# Never commit credentials or player databases
+.env
+.env.*
+!.env.example
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-wal
+*.db-shm
+*.csv
+!examples/example-members.csv
+*.xlsx
+*.xls
+*.bak
+backups/
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+.coverage
+htmlcov/
+*.egg-info/
+
+# Frontend
+node_modules/
+dist/
+npm-debug.log*
+
+# Editors / system
+.idea/
+.vscode/
+.DS_Store
+*.swp

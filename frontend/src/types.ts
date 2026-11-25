@@ -1,0 +1,10 @@
+export type Kind = 'singles' | 'doubles' | 'threes' | 'teams'
+export type Status = 'draft' | 'drawn' | 'published' | 'completed'
+export type Division = { id: number; name: string }
+export type Team = { id: number; name: string; division_id: number; division: string }
+export type Player = { id: number; name: string; division_id: number; division: string; team_id: number | null; team: string; member_number: string | null; active: boolean }
+export type Entry = { id: number; label: string; team_id: number | null; players: { id: number; name: string; division: string; team: string }[] }
+export type Match = { id: number; round_num: number; position: number; a: number | null; b: number | null; bye: boolean; score_a: number | null; score_b: number | null; winner: number | null }
+export type Competition = { id: number; name: string; kind: Kind; division_id: number | null; division: string; enforce_same_division: boolean; status: Status; entry_count: number; created_at: string; entries?: Entry[]; matches?: Match[] }
+export type Auth = { id: number; email: string; role: string; csrf: string }
+export type Overview = { players: number; teams: number; competitions: number; pending_matches: number }
